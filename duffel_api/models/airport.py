@@ -74,7 +74,7 @@ class Place:
     time_zone: Optional[str]
     city_name: Optional[str]
     city: Optional[City]
-    airports: Optional[Sequence[Airport]]
+    # airports: Optional[Sequence[Airport]]
 
     allowed_types = ["airport", "city"]
 
@@ -102,11 +102,11 @@ class Place:
             time_zone=json.get("time_zone"),
             city_name=json.get("city_name"),
             city=get_and_transform(json, "city", City.from_json),
-            airports=get_and_transform(
-                json,
-                "airports",
-                lambda value: [Airport.from_json(airport) for airport in value],
-            ),
+            # airports=get_and_transform(
+            #     json,
+            #     "airports",
+            #     lambda value: [Airport.from_json(airport) for airport in value],
+            # ),
         )
 
 
