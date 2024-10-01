@@ -456,7 +456,7 @@ class Offer:
 
     id: str
     live_mode: bool
-    allowed_passenger_identity_document_types: Sequence[str]
+    supported_passenger_identity_document_types: Sequence[str]
     available_services: Sequence[Service]
     base_amount: str
     base_currency: str
@@ -482,8 +482,8 @@ class Offer:
         return cls(
             id=json["id"],
             live_mode=json["live_mode"],
-            allowed_passenger_identity_document_types=json[
-                "allowed_passenger_identity_document_types"
+            supported_passenger_identity_document_types=json[
+                "supported_passenger_identity_document_types"
             ],
             available_services=get_and_transform(
                 json,
